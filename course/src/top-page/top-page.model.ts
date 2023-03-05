@@ -1,5 +1,6 @@
 import { Base, TimeStamps } from "@typegoose/typegoose/lib/defaultClasses";
 import { prop } from "@typegoose/typegoose";
+import { IsString } from 'class-validator';
 
 export enum TopLevelCategory {
     Courses,
@@ -36,11 +37,14 @@ export class TopPageAdvantage {
 export interface TopPageModel extends Base {}
 export class TopPageModel extends TimeStamps {
 
-    @prop({enum: TopLevelCategory})
+    @prop({ enum: TopLevelCategory })
     firstCategory: TopLevelCategory;
 
     @prop()
     secondCategory: string;
+
+    @prop()
+    alias: string;
 
     @prop()
     title: string;
