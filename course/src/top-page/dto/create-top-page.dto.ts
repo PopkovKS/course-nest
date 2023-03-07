@@ -19,7 +19,7 @@ export class HhDataDto {
 
 }
 
-export class TopPageAdvantage {
+export class TopPageAdvantageDto {
 
   @IsString()
   title: string;
@@ -54,8 +54,8 @@ export class CreateTopPageDto {
   @IsArray()
   @ValidateNested()
 
-  @Type(()=> TopPageAdvantage)
-  advantages: TopPageAdvantage[];
+  @Type(()=> TopPageAdvantageDto)
+  advantages: TopPageAdvantageDto[];
 
   @IsString()
   seoText: string;
